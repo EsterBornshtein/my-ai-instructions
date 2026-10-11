@@ -4,24 +4,36 @@
 
 ## מבנה
 
-- `github-workflow.instructions.md` - הנחיות להתנהגות בכל הנוגע ל-Git/GitHub (commits, branches, PRs).
+- `task-workflow.instructions.md` - עמוד השדרה: כל שלבי התהליך על משימה, מהבקלוג ועד QA, לפי הסדר (כולל "עצירות חובה").
+- `progress-checklist.instructions.md` - ניהול קובץ checklist חי למעקב התקדמות לאורך העבודה על משימה.
+- `backlog-item-creation.instructions.md` - איך למלא פריט חדש בבקלוג (כותרת, תיאור, assignee, sprint, priority, סוג).
+- `github-workflow.instructions.md` - הנחיות להתנהגות בכל הנוגע ל-Git/GitHub (commits, branches, PRs, Copilot review).
+- `development-standards.instructions.md` - סטנדרטים לפיתוח (כיסוי טסטים, איסור שגיאות קומפילציה/TS).
+- `copilot-review-triage.instructions.md` - איך לטפל בהערות של GitHub Copilot Review על PR.
 
 ## איך זה מחובר
 
 כל כלי AI שרוצה להשתמש בהנחיות האלו צריך "לשאוב" אותן מהקובץ כאן, במקום להעתיק את התוכן. כך יש מקור אמת יחיד.
 
+לכל קובץ `.instructions.md` ברשימת ה"מבנה" למעלה יוצרים symlink/import נפרד, באותה שיטה:
+
 ### VS Code (GitHub Copilot)
-Symlink מתיקיית ה-prompts האישית של VS Code אל הקובץ כאן:
+Symlink מתיקיית ה-prompts האישית של VS Code אל כל קובץ כאן, למשל:
 
 ```
 %APPDATA%\Code\User\prompts\github-workflow.instructions.md  -->  (symlink to) <clone-path>\github-workflow.instructions.md
 ```
 
 ### Claude Code
-שורת import בתוך `~/.claude/CLAUDE.md`:
+שורת import בתוך `~/.claude/CLAUDE.md`, אחת לכל קובץ:
 
 ```
 @<clone-path>\github-workflow.instructions.md
+@<clone-path>\task-workflow.instructions.md
+@<clone-path>\progress-checklist.instructions.md
+@<clone-path>\backlog-item-creation.instructions.md
+@<clone-path>\development-standards.instructions.md
+@<clone-path>\copilot-review-triage.instructions.md
 ```
 
 ## הגדרה במחשב חדש
@@ -30,11 +42,12 @@ Symlink מתיקיית ה-prompts האישית של VS Code אל הקובץ כא
    ```
    gh repo clone EsterBornshtein/my-ai-instructions <target-folder>
    ```
-2. **VS Code**: יצירת symlink (דורש הרשאות Admin או Developer Mode מופעל):
+2. **VS Code**: יצירת symlink לכל קובץ (דורש הרשאות Admin או Developer Mode מופעל), למשל:
    ```
    mklink "%APPDATA%\Code\User\prompts\github-workflow.instructions.md" "<target-folder>\github-workflow.instructions.md"
    ```
-3. **Claude Code**: יצירת/עדכון `~/.claude/CLAUDE.md` עם שורת ה-import שלמעלה.
+   וכן הלאה לכל קובץ `.instructions.md` נוסף ברשימת ה"מבנה".
+3. **Claude Code**: יצירת/עדכון `~/.claude/CLAUDE.md` עם שורת import לכל הקבצים, כמו למעלה.
 
 ## הוספת כלי AI נוסף (למשל Cursor, Windsurf וכו')
 
