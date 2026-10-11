@@ -9,6 +9,7 @@
 
 ## תיאור (Description)
 - נכתב **באנגלית**, בצורה ברורה ומסודרת (למשל: Background / Goal / Acceptance Criteria לפי הצורך).
+- שימו לב: האפיון הסופי המאושר (ראו שלבים 2/4 ב-[task-workflow.instructions.md](task-workflow.instructions.md)) נכתב בתגובה (comment) נפרדת על הפריט, ולא נכלל/ממוזג לתוך שדה התיאור.
 
 ## Assignee
 - מקצים (assign) את המשתמש למשימה.
