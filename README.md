@@ -4,12 +4,14 @@
 
 ## מבנה
 
-- `task-workflow.instructions.md` - עמוד השדרה: כל שלבי התהליך על משימה, מהבקלוג ועד QA, לפי הסדר (כולל "עצירות חובה").
+- `task-workflow.instructions.md` - עמוד השדרה: כל שלבי התהליך על משימה, מהבקלוג ועד QA, לפי הסדר (כולל "עצירות חובה"). **אינו נטען אוטומטית** (ללא `applyTo`) - נטען רק כשבוחרים את ה-agent הייעודי `task-workflow.agent.md`.
+- `task-workflow.agent.md` - **Custom Agent נפרד** (לא instructions) להרצת תהליך המשימה המלא. נבחר ידנית מתוך ה-agent picker ב-VS Code; קורא ל-task-workflow.instructions.md ועוקב אחריו שלב אחר שלב.
 - `progress-checklist.instructions.md` - ניהול קובץ checklist חי למעקב התקדמות לאורך העבודה על משימה.
 - `backlog-item-creation.instructions.md` - איך למלא פריט חדש בבקלוג (כותרת, תיאור, assignee, sprint, priority, סוג).
 - `github-workflow.instructions.md` - הנחיות להתנהגות בכל הנוגע ל-Git/GitHub (commits, branches, PRs, Copilot review).
 - `development-standards.instructions.md` - סטנדרטים לפיתוח (כיסוי טסטים, איסור שגיאות קומפילציה/TS).
 - `copilot-review-triage.instructions.md` - איך לטפל בהערות של GitHub Copilot Review על PR.
+- `investigation.agent.md` - **Custom Agent נפרד** (לא instructions) לחקירת/הבנת מערכת קיימת. עצמאי מתהליך task-workflow (ללא בקלוג/branch/PR/APPROVE), read-only + פקודות לא-הרסניות בלבד, מפיק קובץ תיעוד (למשל `docs/architecture.md`). נבחר ידנית מתוך ה-agent picker ב-VS Code.
 
 ## איך זה מחובר
 
