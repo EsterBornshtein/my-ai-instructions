@@ -12,6 +12,8 @@
 - `development-standards.instructions.md` - סטנדרטים לפיתוח (כיסוי טסטים, איסור שגיאות קומפילציה/TS).
 - `copilot-review-triage.instructions.md` - איך לטפל בהערות של GitHub Copilot Review על PR.
 - `investigation.agent.md` - **Custom Agent נפרד** (לא instructions) לחקירת/הבנת מערכת קיימת. עצמאי מתהליך task-workflow (ללא בקלוג/branch/PR/APPROVE), read-only + פקודות לא-הרסניות בלבד, מפיק קובץ תיעוד (למשל `docs/architecture.md`). נבחר ידנית מתוך ה-agent picker ב-VS Code.
+- `bug-fixing.instructions.md` - מתודולוגיית חקירת באגים (שחזור, איסוף עדויות, בדיקת מספר כיוונים לפני קביעת שורש הבעיה). משלים את task-workflow.instructions.md עבור שלב האיפיון (2/4), ואינו נטען אוטומטית.
+- `bug-fixing.agent.md` - **Custom Agent נפרד** לפתרון באגים. עוקב אחרי אותו תהליך מלא כמו Task Workflow, ובנוסף אחרי bug-fixing.instructions.md לחקירת שורש הבעיה לפני איפיון הפתרון. נבחר ידנית מתוך ה-agent picker ב-VS Code.
 
 ## איך זה מחובר
 
